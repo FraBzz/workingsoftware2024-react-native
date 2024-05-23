@@ -1,0 +1,2 @@
+- rifare repo
+- controllare la status bar con iOS

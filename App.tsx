@@ -2,19 +2,14 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import HomeScreen from "./src/views/HomeScreen";
 import { OneSignal } from "react-native-onesignal";
-import { config } from "react-native-dotenv";
+import {ONE_SIGNAL_APP_ID} from "@env"
 
-// Carica le variabili ambiente dal file .env
-config({
-  path: "./.env"
-});
-// Carica le variabili ambiente dal file .env
 
-export default function App() {
-  
-  console.log(process.env.ONE_SIGNAL_APP_ID);
-  OneSignal.initialize(process.env.ONE_SIGNAL_APP_ID);
-  OneSignal.Notifications.requestPermission(true);
+
+export default function App() {   
+   OneSignal.initialize(ONE_SIGNAL_APP_ID);
+   OneSignal.initialize("294c58e6-f5c3-41a3-b21d-7745dcf43437");   
+   OneSignal.Notifications.requestPermission(true);
   
   return (
     <>
